@@ -43,4 +43,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jistr/vim-nerdtree-tabs'
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
 
