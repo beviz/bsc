@@ -20,7 +20,10 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 " set foldcolumn=0
 " setlocal foldlevel=1
 
-" color schema
-colorscheme monokai
+if filereadable(glob("~/.vim/bundle/vim-monokai/LICENSE"))
+  " color schema
+  colorscheme monokai
+endif
 let g:monokai_term_italic = 1
 let g:monokai_gui_italic = 1
+
