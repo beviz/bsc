@@ -26,18 +26,16 @@ ln_confirm() {
 
 # vim
 ln_confirm vimrc ~/.vimrc
-# ln -s $BASEDIR/vimrc ~/.vimrc
 ln_confirm vim ~/.vim
-# ln -s $BASEDIR/vim ~/.vim
 
-if [ "$DEV" = true ]; then
-  if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  fi
-  vim +PluginInstall +qall
-  if [ -d ~/.vim/bundle/command-t ]; then
-    cd ~/.vim/bundle/command-t && rake make
-  fi
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
+vim +PluginInstall +qall
+
+if [ -d ~/.vim/bundle/command-t ]; then
+  cd ~/.vim/bundle/command-t && rake make
 fi
 
 # tmux
