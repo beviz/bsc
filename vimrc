@@ -6,6 +6,7 @@ source ~/.vim/plugins.vim
 " endif
 
 source ~/.vim/basic.vim
+" source ~/.vim/shortcuts.vim
 source ~/.vim/aliases.vim
 
 if filereadable(glob("~/.vimrc.local"))
