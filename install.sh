@@ -29,19 +29,12 @@ ln_confirm() {
   echo "added: $2"
 }
 
-# vim
-ln_confirm vimrc ~/.vimrc
-ln_confirm vim ~/.vim
-ln_confirm oh-my-tmux/.tmux.conf ~/.tmux.conf
-ln_confirm oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local
+# tmux
+ln_confirm oh-my-tmux/tmux.conf ~/.tmux.conf
+ln_confirm oh-my-tmux/tmux.conf.local ~/.tmux.conf.local
 
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+# SpaceVim
+curl -sLf https://spacevim.org/install.sh | bash
+ln_confirm SpaceVim.d ~/.SpaceVim.d
 
-vim +PluginInstall +qall
-
-if [ -d ~/.vim/bundle/command-t ]; then
-  cd ~/.vim/bundle/command-t && rake make
-fi
 
